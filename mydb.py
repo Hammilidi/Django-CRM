@@ -1,16 +1,20 @@
- 
 import mysql.connector
 
+# Establish a connection to the MySQL server
 dataBase = mysql.connector.connect(
-    host = 'localhost',
-    user = 'root',
-    password = 'admin'   
+    host='localhost',
+    user='root',
+    password='admin'
 )
 
-#prepare a cursor object
+# Create a cursor object to execute SQL queries
 cursorObject = dataBase.cursor()
 
-#Create a database
+# Create the 'elderco' database
 cursorObject.execute("CREATE DATABASE elderco")
 
-print('All done !')
+# Close the cursor and the database connection
+#cursorObject.close()
+#dataBase.close()
+
+print('All done!')
